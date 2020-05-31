@@ -1,3 +1,9 @@
-/dist
-/node_modules
+backend/dist
+backend/node_modules
+backend/backend/dist
+backend/backend/node_modules
+frontent/dist
+frontent/node_modules
 .DS_Store
+login_
+Fuse-v9.0.0-demo

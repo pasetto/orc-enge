@@ -14,16 +14,22 @@ import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseProgressBarModule, FuseSidebarModule, FuseThemeOptionsModule } from '@fuse/components';
 
 import { fuseConfig } from './fuse-config'
+import { FakeDbService } from 'app/fake-db/fake-db.service';
 
 import { AppComponent } from './app.component'
 import { LayoutModule } from './layout/layout.module'
 import { SampleModule } from './main/sample/sample.module'
 import { AuthModule } from './main/auth/auth.module'
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 const appRoutes: Routes = [
     {
         path        : 'auth',
         loadChildren: () => import('./main/auth/auth.module').then(m => m.AuthModule)
+    },
+    {
+        path        : 'e-commerce',
+        loadChildren: () => import('./main/e-commerce/e-commerce.module').then(m => m.EcommerceModule)
     },
     {
         path      : '**',
@@ -42,6 +48,10 @@ const appRoutes: Routes = [
         RouterModule.forRoot(appRoutes),
         
         TranslateModule.forRoot(),
+        InMemoryWebApiModule.forRoot(FakeDbService, {
+            delay             : 0,
+            passThruUnknownUrl: true
+        }),
         
         // Material moment date module
         MatMomentDateModule,

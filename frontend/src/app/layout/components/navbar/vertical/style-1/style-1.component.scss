@@ -26,6 +26,10 @@ fuse-sidebar {
                                 height: 32px;
                             }
 
+                            .logo-svg {
+                                height: 32px !important;
+                            }
+
                             .logo-text {
                                 display: none;
                             }
@@ -132,6 +136,10 @@ navbar {
                 .logo-icon {
                     width: 24px;
                     height: 24px;
+                }
+
+                .logo-svg {
+                    height: 32px !important;
                 }
 
                 .logo-text {
